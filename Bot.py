@@ -27,9 +27,10 @@ while True:
         print(numberoflines)
 
         #TWEET IT
-        tweet_message = song.lyrics.splitlines()[barLine] + ' ' + song.lyrics.splitlines()[barLine+1] + ' ~ Lil Tracy'
+        tweet_message = song.lyrics.splitlines()[barLine] + ' ' + song.lyrics.splitlines()[barLine+1] + ' ~ ' + artist.name
         api.update_status(tweet_message)
 
         time.sleep(120)
-    finally:
-       continue
+    except:
+        print("Something went wrong, trying again :(")
+        continue
